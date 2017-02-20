@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VR View - hotspot example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <link href="../style.css" rel="stylesheet" type="text/css">
+    <script src="jquery-3.1.1.min.js"></script>
+
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div id="link">My video</div>
+
+    <h1>American Museum of Natural History</h1>
+    <h2>One of the largest museums in the world</h2>
+    <p>The museum has many mammal halls, including the Akeley Hall of African Mammals and the Whitney Memorial Hall of Oceanic Birds.</p>
+
+    <p>The 360 video below shows the Milstein Hall of Ocean Life.</p>
+
+    <div id="vrview"></div>
+
+
+    <div id="myModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <iframe width="400" height="300" frameborder="0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('#link').click(function() {
+            var src = 'http://www.youtube.com/v/FSi2fJALDyQ&amp;autoplay=1';
+            $('#myModal').modal('show');
+            $('#myModal iframe').attr('src', src);
+        });
+
+        $('#myModal button').click(function() {
+            $('#myModal iframe').removeAttr('src');
+        });
+    </script>
+    <p>The hall is most famous for its 94-foot (29 m)-long blue whale model, suspended from the ceiling behind its dorsal fin. The hall's classic lines and visually arresting elegance host cutting-edge exhibition technology and the latest scientific research
+        on the ocean.</p>
+
+    <p>The 29,000-square-foot Hall has been transformed into a fully immersive marine environment with high-definition video projections, interactive computer stations, hands-on models, 14 renovated classic dioramas, and eight new ocean ecosystem displays
+        that transport visitors from the rainbow-hued profusion of life in the Indo-Pacific coral reefs to the flickering bioluminescence of fishes in the eerie darkness of the deep sea.</p>
+
+    <p>Source <a href="https://en.wikipedia.org/wiki/American_Museum_of_Natural_History">Wikipedia</a></p>
+
+    <script src="../../build/vrview.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
